@@ -1,0 +1,613 @@
+/* Fewer decisions, more room for the timetable. */
+.sidebar .brand,
+.sidebar .brand-sub {
+  display: none;
+}
+.sidebar .nav-label {
+  margin: 8px 13px 20px;
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.sidebar .nav {
+  gap: 8px;
+}
+.sidebar-bottom .version {
+  display: none;
+}
+.page-head {
+  margin-bottom: 24px;
+}
+.page-head .eyebrow {
+  display: none;
+}
+.page-head h1 {
+  font-size: clamp(28px, 2.5vw, 36px);
+}
+.page-head p {
+  font-size: 16px;
+}
+.main {
+  max-width: 1600px;
+}
+.topbar {
+  margin-bottom: 28px;
+}
+.demo-banner {
+  margin-bottom: 20px;
+}
+.schedule-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+  padding: 15px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 14px;
+}
+.summary-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  color: var(--muted);
+}
+.summary-counts strong {
+  color: var(--ink);
+  font-weight: 650;
+  margin-left: 4px;
+}
+.result-note {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.toolbar {
+  margin-bottom: 16px;
+}
+.schedule-panel .schedule td {
+  height: 100px;
+}
+.schedule-panel .exam {
+  min-height: 68px;
+}
+.schedule-panel .board-footer {
+  padding: 15px 20px;
+}
+.schedule-panel .schedule th:first-child {
+  width: 88px;
+}
+.schedule-panel .schedule th:nth-child(2) {
+  width: 54px;
+}
+.roster-table {
+  max-height: 590px;
+}
+.roster-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.data-grid {
+  grid-template-columns: 310px minmax(0, 1fr);
+}
+.data-grid > section {
+  align-self: start;
+}
+.upload-zone .upload-icon .icon svg {
+  width: 30px;
+  height: 30px;
+}
+.compact-details {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.compact-details summary {
+  cursor: pointer;
+  color: var(--blue);
+  font-size: 14px;
+}
+.compact-details p {
+  margin-top: 12px;
+}
+.date-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 22px 0 18px;
+  font-size: 13px;
+}
+.daily-limit {
+  margin-top: 28px;
+  max-width: 340px;
+}
+.advanced-settings {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 28px;
+  padding: 18px 0;
+}
+.advanced-settings summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+.advanced-settings summary span {
+  display: inline-block;
+  margin-left: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+.advanced-settings .form-grid {
+  padding-top: 25px;
+}
+.settings-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 24px;
+}
+.settings-submit .side-note {
+  margin: 0;
+}
+#editDialog {
+  max-width: 480px;
+}
+.move-summary {
+  font-size: 14px;
+}
+.footer-note {
+  margin-top: 16px;
+}
+.topbar .crumb {
+  font-size: 13px;
+}
+@media (max-width: 1068px) {
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+  .roster-table {
+    max-height: 520px;
+  }
+  .data-grid > section:first-child .panel-body {
+    display: block;
+  }
+  .schedule-summary {
+    gap: 12px;
+  }
+  .summary-counts {
+    gap: 16px;
+  }
+}
+@media (max-width: 800px) {
+  .sidebar {
+    padding: 8px 16px;
+  }
+  .sidebar .nav {
+    margin: 0;
+    padding: 0;
+    gap: 6px;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sidebar .nav button {
+    justify-content: center;
+    font-size: 14px;
+    padding: 9px 7px;
+  }
+  .sidebar .nav-label {
+    display: none;
+  }
+  .main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .topbar .row {
+    justify-content: flex-end;
+  }
+  .schedule-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+  .summary-counts {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .result-note {
+    font-size: 12px;
+  }
+  .settings-submit {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .date-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .page-head h1 {
+    font-size: 30px;
+  }
+  .page-head p {
+    font-size: 15px;
+  }
+  .advanced-settings summary span {
+    display: block;
+    margin: 7px 0 0 18px;
+  }
+  .panel-head .row {
+    flex-wrap: wrap;
+  }
+  .roster-table {
+    max-height: 450px;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar .nav button {
+    font-size: 13px;
+  }
+  .page-head h1 {
+    font-size: 27px;
+  }
+  .summary-counts {
+    font-size: 13px;
+  }
+  .schedule-panel .board-footer {
+    padding: 14px;
+  }
+  .schedule-panel .board-footer > .row {
+    margin-left: auto;
+  }
+  .daily-limit {
+    max-width: none;
+  }
+  .toolbar > .row {
+    flex-basis: 100%;
+  }
+  .toolbar > .row:last-child {
+    justify-content: flex-end;
+  }
+}
+@media print {
+  .schedule-summary,
+  .settings-submit,
+  .compact-details {
+    display: none !important;
+  }
+  .schedule-panel .schedule td {
+    height: 80px;
+  }
+  .schedule-panel .exam {
+    min-height: 0;
+  }
+}
+/* Curriculum selection stays inside the existing three-view workflow. */
+.step-kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.course-plan-panel {
+  margin-bottom: 22px;
+}
+.selected-course-table {
+  max-height: 380px;
+}
+.selected-course-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.course-category {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.course-type {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: var(--bg);
+  white-space: nowrap;
+}
+.course-type.common {
+  color: var(--blue);
+  background: rgba(0, 113, 227, 0.08);
+}
+.course-source {
+  padding-top: 0 !important;
+  padding-bottom: 18px !important;
+}
+.source-note {
+  margin-top: 12px;
+}
+.source-note a {
+  display: block;
+  color: var(--blue);
+  margin-top: 7px;
+  overflow-wrap: anywhere;
+}
+.enrollment-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.enrollment-steps h2 {
+  font-size: 22px;
+}
+.template-controls {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  margin: 24px 0 16px;
+}
+.template-controls .field {
+  max-width: 200px;
+}
+.template-controls button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+}
+.compact-upload {
+  padding: 20px !important;
+  margin-top: 10px;
+}
+.data-next {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 14px;
+}
+.objective-note {
+  margin: 10px 0 0;
+}
+.field-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.result-note {
+  white-space: normal;
+  text-align: right;
+}
+.page-head h1 {
+  font-size: clamp(27px, 2.5vw, 36px);
+}
+#subjectDialog {
+  max-width: 1000px;
+  width: calc(100% - 32px);
+  max-height: 90vh;
+  padding: 30px;
+  overflow: auto;
+}
+#subjectDialog h2 {
+  font-size: 27px;
+}
+#subjectDialog .edit-heading p {
+  font-size: 14px;
+  margin-top: 7px;
+}
+.catalog-filters {
+  display: grid;
+  grid-template-columns: 120px 190px 1fr;
+  gap: 14px;
+  margin: 24px 0 14px;
+}
+.picker-note {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.catalog-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.catalog-columns h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.catalog-list,
+.picked-list {
+  height: 310px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 3px;
+}
+.catalog-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: start;
+  gap: 8px;
+}
+.catalog-choice {
+  display: flex;
+  gap: 9px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  align-items: start;
+  cursor: pointer;
+  transition:
+    background 0.16s,
+    border-color 0.16s;
+}
+.catalog-choice.chosen {
+  background: rgba(0, 113, 227, 0.06);
+  border-color: var(--blue);
+}
+.catalog-choice input {
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--blue);
+}
+.catalog-choice strong {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.catalog-choice small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.picked-course {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.picked-course > div {
+  flex: 1;
+  min-width: 0;
+}
+.picked-course strong {
+  font-size: 14px;
+}
+.picked-course small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.picked-course select {
+  font-size: 12px;
+  padding: 8px;
+  width: 99px;
+  flex-shrink: 0;
+}
+.picked-course button {
+  flex-shrink: 0;
+}
+.custom-course {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.custom-course input {
+  flex: 1;
+  min-width: 0;
+}
+.course-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 20px;
+}
+.course-dialog-footer .side-note {
+  max-width: 540px;
+  margin: 0;
+}
+.course-dialog-footer .row {
+  flex-shrink: 0;
+}
+#courseError {
+  font-size: 13px;
+  margin-top: 12px;
+}
+.exam small .exam-mode {
+  color: var(--blue);
+  font-size: 11px;
+  margin-right: 5px;
+}
+@media (max-width: 1000px) {
+  .enrollment-steps {
+    grid-template-columns: 1fr;
+  }
+  .catalog-list {
+    grid-template-columns: 1fr;
+  }
+  .catalog-columns {
+    gap: 18px;
+  }
+  .template-controls {
+    align-items: center;
+  }
+  .result-note {
+    text-align: left;
+  }
+}
+@media (max-width: 650px) {
+  #subjectDialog {
+    padding: 20px;
+    width: calc(100% - 20px);
+  }
+  #subjectDialog h2 {
+    font-size: 23px;
+  }
+  .catalog-filters {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .catalog-filters .field:last-child {
+    grid-column: 1/-1;
+  }
+  .catalog-columns {
+    grid-template-columns: 1fr;
+  }
+  .catalog-list {
+    height: 240px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .picked-list {
+    height: 200px;
+  }
+  .course-dialog-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .course-dialog-footer .row {
+    justify-content: flex-end;
+  }
+  .data-next {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .template-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .template-controls .field {
+    max-width: none;
+  }
+  .custom-course {
+    flex-direction: column;
+  }
+  .selected-course-table table {
+    min-width: 600px;
+  }
+  .page-head h1 {
+    font-size: 27px;
+  }
+  .course-plan-panel .panel-head {
+    align-items: flex-start;
+    gap: 18px;
+    flex-direction: column;
+  }
+}
