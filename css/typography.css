@@ -1,0 +1,738 @@
+/* ExamFlow 2.1 — Korean typography and a persistent brand header. */
+@font-face {
+  font-family: 'Pretendard ExamFlow';
+  src: url('../vendor/PretendardVariable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: block;
+}
+:root {
+  --font-ui:
+    'Pretendard ExamFlow', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --text-body: 16px;
+  --text-control: 15px;
+  --text-small: 13px;
+  --topheight: 60px;
+}
+html,
+body,
+button,
+input,
+select,
+textarea,
+table,
+code,
+pre {
+  font-family: var(--font-ui);
+}
+body {
+  font-size: calc(var(--text-body) * var(--ui-scale));
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.018em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+button,
+input,
+select,
+textarea {
+  font-size: calc(var(--text-control) * var(--ui-scale));
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+button {
+  font-weight: 500;
+  min-height: 44px;
+}
+button.small {
+  font-size: calc(14px * var(--ui-scale));
+  min-height: 40px;
+}
+strong {
+  font-weight: 650;
+}
+small {
+  font-size: var(--text-small);
+  line-height: 1.5;
+}
+h1 {
+  font-size: clamp(30px, 2.8vw, 40px);
+  line-height: 1.25;
+  font-weight: 720;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 680;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+.globalbar {
+  height: var(--topheight);
+  padding: 0 24px;
+  font-size: 13px;
+  letter-spacing: 0;
+  gap: 20px;
+}
+.globalbar .top-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  color: #fff;
+  min-height: 44px;
+  flex-shrink: 0;
+  text-decoration: none;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+}
+.globalbar .top-brand:hover {
+  background: transparent;
+  opacity: 0.86;
+}
+.top-brand .logo-symbol {
+  display: block;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: none;
+}
+.globalbar .top-brand .logo-word {
+  color: #fff;
+  font-size: 23px;
+  font-weight: 720;
+  letter-spacing: -0.8px;
+  line-height: 1;
+}
+.globalbar .global-sub {
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.globalbar button {
+  font-size: 13px;
+  min-height: 44px;
+}
+.global-actions {
+  gap: 16px;
+}
+.globalbar .dot {
+  width: 6px;
+  height: 6px;
+}
+.sidebar {
+  top: var(--topheight);
+  padding-top: 25px;
+}
+.main {
+  padding-top: var(--topheight);
+}
+.topbar {
+  top: var(--topheight);
+  height: 72px;
+  margin-bottom: 30px;
+}
+.skip-link:focus {
+  top: calc(var(--topheight) + 6px);
+}
+html {
+  scroll-padding-top: 145px;
+}
+.brand {
+  font-size: 23px;
+  font-weight: 720;
+  letter-spacing: -0.7px;
+}
+.brand-sub,
+.nav-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.nav button {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.nav button.active {
+  font-weight: 650;
+}
+.sidebar-bottom {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.sidebar-bottom .muted {
+  font-size: 12px;
+}
+.version {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+.crumb {
+  font-size: 14px;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+}
+.page-head p {
+  font-size: 17px;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+.hero-proof .proof-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hero-proof small {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.hero-proof {
+  min-width: 190px;
+}
+.demo-banner {
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 13px 16px;
+}
+.demo-banner strong {
+  font-weight: 650;
+}
+.demo-banner button {
+  font-size: 14px;
+}
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.stat {
+  padding: 22px;
+}
+.stat .label {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+}
+.stat .value {
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  margin: 14px 0 8px;
+}
+.stat .unit {
+  font-size: 15px;
+  font-weight: 400;
+}
+.stat .foot {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.toolbar-title {
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.toolbar select {
+  font-size: 14px;
+}
+.toolbar .primary {
+  font-size: 15px;
+}
+.panel-head small {
+  font-size: 13px;
+  line-height: 1.55;
+}
+.panel-head {
+  padding: 20px 22px;
+}
+.rule {
+  font-size: 14px;
+  line-height: 1.55;
+  gap: 12px;
+}
+.side-note,
+.bar-label,
+.statusline,
+.footer-note,
+.board-footer,
+.motion-hint,
+.progress-caption,
+.drag-explainer {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.rule strong {
+  white-space: nowrap;
+}
+.schedule {
+  min-width: 730px;
+}
+.schedule th {
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.schedule th small,
+.schedule .date small {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.schedule td.date {
+  font-size: 15px;
+  font-weight: 650;
+}
+.schedule td {
+  height: 116px;
+  padding: 8px;
+}
+.schedule td small {
+  font-size: 13px;
+}
+.exam {
+  font-size: calc(15px * var(--ui-scale));
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  padding: 11px 10px;
+}
+.exam strong {
+  font-weight: 650;
+}
+.exam small {
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.4;
+}
+.exam .lock {
+  font-size: 11px;
+}
+.risk-badge {
+  font-size: calc(12px * var(--ui-scale));
+  line-height: 1.45;
+  gap: 3px;
+}
+.empty-cell {
+  font-size: 16px;
+}
+.seg button {
+  font-size: 14px;
+  min-height: 36px;
+  padding: 6px 13px;
+}
+.field label {
+  font-size: 15px;
+  font-weight: 600;
+}
+.field small {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.input-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+.section-label {
+  font-size: 17px;
+}
+.day-item {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.day-item select {
+  font-size: 13px;
+  max-width: 76px;
+}
+.data-table th {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.data-table td {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.data-table td select {
+  font-size: 14px;
+  max-width: 178px;
+}
+.search-row input {
+  font-size: 15px;
+}
+.search-row {
+  font-size: 13px;
+}
+.upload-zone strong {
+  font-size: 18px;
+  font-weight: 650;
+}
+.upload-zone p,
+.info-box {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.tip {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.mini-list {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.section-title p {
+  font-size: 14px;
+}
+.calendar {
+  min-width: 840px;
+}
+.calendar .weekday {
+  font-size: 14px;
+}
+.calendar .day span.num {
+  font-size: 14px;
+  font-weight: 600;
+}
+.calendar .exam {
+  font-size: calc(14px * var(--ui-scale));
+  line-height: 1.45;
+}
+.calendar .exam small,
+.calendar .day > small {
+  font-size: calc(12px * var(--ui-scale));
+  line-height: 1.5;
+}
+.calendar .risk-badge {
+  font-size: calc(11px * var(--ui-scale));
+  line-height: 1.45;
+}
+.calendar .day {
+  min-height: 160px;
+}
+.choice {
+  font-size: calc(15px * var(--ui-scale));
+  line-height: 1.5;
+}
+.day-card h3 {
+  font-size: 18px;
+}
+.personal-exam {
+  font-size: calc(15px * var(--ui-scale));
+  line-height: 1.55;
+}
+.personal-exam small {
+  font-size: calc(13px * var(--ui-scale));
+  line-height: 1.5;
+}
+.help p,
+.help li {
+  font-size: 16px;
+  line-height: 1.9;
+}
+.help h2 {
+  font-size: 22px;
+}
+.empty-state p {
+  font-size: 15px;
+}
+dialog {
+  font-size: 15px;
+  line-height: 1.65;
+}
+dialog label {
+  font-size: 15px;
+}
+dialog h2 {
+  font-size: 25px;
+}
+.slot-date,
+.slot-option {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.slot-option {
+  min-height: 42px;
+}
+.move-summary {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.pair-item,
+.daily-item,
+.histogram-row {
+  font-size: 14px;
+}
+.pair-item small,
+.daily-item small,
+.pill-status {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.progress-data {
+  font-size: 16px;
+}
+.toast {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.reading-mode .schedule th {
+  font-size: 17px;
+}
+.reading-mode .schedule th small,
+.reading-mode .exam small {
+  font-size: 15px;
+}
+.reading-mode .data-table td,
+.reading-mode input,
+.reading-mode select {
+  font-size: 17px;
+}
+.reading-mode .schedule {
+  min-width: 850px;
+}
+@media (max-width: 1068px) {
+  .brand {
+    font-size: 21px;
+  }
+  .nav button {
+    font-size: 14px;
+  }
+  .stat .value {
+    font-size: 37px;
+  }
+  .page-head p {
+    font-size: 16px;
+  }
+  .topbar .row {
+    gap: 6px;
+  }
+  .topbar button {
+    font-size: 13px;
+  }
+  .hero-proof {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    --topheight: 56px;
+    --text-body: 15px;
+    --text-control: 15px;
+  }
+  .globalbar {
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .globalbar .top-brand {
+    gap: 8px;
+  }
+  .top-brand .logo-symbol {
+    width: 30px;
+    height: 30px;
+  }
+  .globalbar .top-brand .logo-word {
+    font-size: 21px;
+  }
+  .globalbar button {
+    font-size: 12px;
+  }
+  .global-actions {
+    gap: 8px;
+  }
+  .sidebar {
+    top: auto;
+    margin-top: var(--topheight);
+    padding: 16px 16px 8px;
+  }
+  .main {
+    padding-top: 0;
+  }
+  .topbar {
+    height: 62px;
+    margin-bottom: 24px;
+  }
+  .topbar button {
+    font-size: 14px;
+  }
+  .brand {
+    font-size: 22px;
+  }
+  .nav button {
+    font-size: 14px;
+    min-height: 44px;
+  }
+  .page-head h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+  .page-head p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .eyebrow {
+    font-size: 11px;
+  }
+  .stat {
+    padding: 18px;
+  }
+  .stat .value {
+    font-size: 36px;
+  }
+  .stat .label {
+    font-size: 14px;
+  }
+  .stat .unit {
+    font-size: 14px;
+  }
+  .stat .foot {
+    font-size: 13px;
+  }
+  .demo-banner {
+    font-size: 13px;
+  }
+  .demo-banner button {
+    font-size: 13px;
+  }
+  .toolbar-title {
+    font-size: 17px;
+  }
+  .panel-head h2 {
+    font-size: 20px;
+  }
+  .panel-head small {
+    font-size: 13px;
+  }
+  .toolbar .primary {
+    font-size: 15px;
+  }
+  .side-note,
+  .footer-note,
+  .board-footer {
+    font-size: 13px;
+  }
+  .section-title {
+    flex-wrap: wrap;
+  }
+  .globalbar .global-sub {
+    display: none;
+  }
+  dialog {
+    padding: 22px;
+  }
+  dialog h2 {
+    font-size: 23px;
+  }
+}
+@media (max-width: 480px) {
+  .global-actions > span {
+    display: none;
+  }
+  .page-head h1 {
+    font-size: 29px;
+  }
+  .page-head p {
+    font-size: 15px;
+  }
+  .stat {
+    padding: 17px 14px;
+  }
+  .stat .value {
+    font-size: 34px;
+  }
+  .stat .label {
+    font-size: 13px;
+  }
+  .stat .foot {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .topbar .row {
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .topbar button {
+    font-size: 13px;
+    padding: 8px 9px;
+  }
+  .demo-banner button {
+    padding: 8px 11px;
+  }
+  .panel-head h2 {
+    font-size: 20px;
+  }
+  .data-table td {
+    font-size: 14px;
+  }
+  .seg button {
+    font-size: 13px;
+  }
+  .toolbar-title {
+    font-size: 16px;
+  }
+  .display-options button {
+    font-size: 14px;
+  }
+  .slot-option {
+    font-size: 13px;
+  }
+  .day-cards {
+    grid-template-columns: 1fr;
+  }
+}
+@media print {
+  .main {
+    padding-top: 0;
+  }
+  .schedule {
+    min-width: 0;
+  }
+  .schedule th {
+    font-size: 11px;
+  }
+  .schedule th small,
+  .schedule .date small {
+    font-size: 9px;
+  }
+  .schedule td.date {
+    font-size: 11px;
+  }
+  .schedule td {
+    height: 80px;
+  }
+  .exam {
+    font-size: 12px !important;
+  }
+  .exam small {
+    font-size: 10px !important;
+  }
+  .risk-badge {
+    font-size: 9px;
+  }
+  .calendar {
+    min-width: 0;
+  }
+  .calendar .exam {
+    font-size: 11px;
+  }
+  .calendar .exam small {
+    font-size: 9px;
+  }
+  .calendar .risk-badge {
+    font-size: 8px;
+  }
+  .print-only h1 {
+    font-size: 24px;
+  }
+}
