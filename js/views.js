@@ -67,7 +67,31 @@ function tableHTML() {
       .sort()
       .filter((g) => state.grade === 'all' || g === state.grade),
     max = Math.max(...state.config.days.map((d) => d.periods));
-  let html = /* HTML */ `<table class="schedule">
+  let rows = '';
+  state.config.days.forEach((d, di) =>
+    grades.forEach((g, gi) => {
+      rows += '<tr>';
+      if (!gi) {
+        rows += `<td class="date" rowspan="${grades.length}">
+          ${dateLabel(d.date)}<small>${weekday(d.date)}요일</small>
+        </td>`;
+      }
+      rows += `<td><small>${g}</small></td>`;
+      for (let p = 0; p < max; p++) {
+        const t = ctx.slots.findIndex((s) => s.day === di && s.period === p),
+          ids = state.data.subjects.filter(
+            (c) => c.grades.includes(g) && state.assignment[c.id] === t,
+          );
+        rows += /* HTML */ `<td
+          ${t >= 0 ? `data-drop-slot="${t}" data-drop-grade="${g}"` : ''}
+        >
+          ${p >= d.periods ? '<small>미운영</small>' : ids.length ? ids.map((c) => exam(c.id)).join('') : '<span class="empty-cell" aria-label="배치 없음">—</span>'}
+        </td>`;
+      }
+      rows += '</tr>';
+    }),
+  );
+  return /* HTML */ `<table class="schedule">
     <caption class="sr-only">
       날짜와 학년별 시험 시간표. 과목 버튼을 누르면 배치를 수정할 수 있습니다.
     </caption>
@@ -78,31 +102,10 @@ function tableHTML() {
         ${Array.from({ length: max }, (_, p) => `<th scope="col">${p + 1}교시<small>${timeOf(p)}</small></th>`).join('')}
       </tr>
     </thead>
-    <tbody>`;
-  state.config.days.forEach((d, di) =>
-    grades.forEach((g, gi) => {
-      html += '<tr>';
-      if (!gi) {
-        html += `<td class="date" rowspan="${grades.length}">
-          <span class="date-label">${dateLabel(d.date)} <small>(${weekday(d.date)})</small></span>
-        </td>`;
-      }
-      html += `<td><small>${g}</small></td>`;
-      for (let p = 0; p < max; p++) {
-        const t = ctx.slots.findIndex((s) => s.day === di && s.period === p),
-          ids = state.data.subjects.filter(
-            (c) => c.grades.includes(g) && state.assignment[c.id] === t,
-          );
-        html += /* HTML */ `<td
-          ${t >= 0 ? `data-drop-slot="${t}" data-drop-grade="${g}"` : ''}
-        >
-          ${p >= d.periods ? '<small>미운영</small>' : ids.length ? ids.map((c) => exam(c.id)).join('') : '<span class="empty-cell" aria-label="배치 없음">—</span>'}
-        </td>`;
-      }
-      html += '</tr>';
-    }),
-  );
-  return html + '</tbody></table>';
+    <tbody>
+      ${rows}
+    </tbody>
+  </table>`;
 }
 
 function render() {
