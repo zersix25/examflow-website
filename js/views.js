@@ -78,13 +78,15 @@ function tableHTML() {
         ${Array.from({ length: max }, (_, p) => `<th scope="col">${p + 1}교시<small>${timeOf(p)}</small></th>`).join('')}
       </tr>
     </thead>
-    <tbody></tbody>
-  </table>`;
+    <tbody>`;
   state.config.days.forEach((d, di) =>
     grades.forEach((g, gi) => {
       html += '<tr>';
-      if (!gi)
-        html += `<td class="date" rowspan="${grades.length}">${dateLabel(d.date)}<small>${weekday(d.date)}요일</small></td>`;
+      if (!gi) {
+        html += `<td class="date" rowspan="${grades.length}">
+          <span class="date-label">${dateLabel(d.date)} <small>(${weekday(d.date)})</small></span>
+        </td>`;
+      }
       html += `<td><small>${g}</small></td>`;
       for (let p = 0; p < max; p++) {
         const t = ctx.slots.findIndex((s) => s.day === di && s.period === p),
